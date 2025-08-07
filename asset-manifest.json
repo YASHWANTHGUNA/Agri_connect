@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Agri_connect/static/css/main.7a8fb9c5.css",
-    "main.js": "/Agri_connect/static/js/main.7e26ebe5.js",
+    "main.js": "/Agri_connect/static/js/main.9b6bc3ce.js",
     "index.html": "/Agri_connect/index.html",
     "main.7a8fb9c5.css.map": "/Agri_connect/static/css/main.7a8fb9c5.css.map",
-    "main.7e26ebe5.js.map": "/Agri_connect/static/js/main.7e26ebe5.js.map"
+    "main.9b6bc3ce.js.map": "/Agri_connect/static/js/main.9b6bc3ce.js.map"
   },
   "entrypoints": [
     "static/css/main.7a8fb9c5.css",
-    "static/js/main.7e26ebe5.js"
+    "static/js/main.9b6bc3ce.js"
   ]
 }
