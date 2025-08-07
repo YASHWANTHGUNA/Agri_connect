@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Agri_connect/static/css/main.7a8fb9c5.css",
+    "main.js": "/Agri_connect/static/js/main.992a83f6.js",
+    "index.html": "/Agri_connect/index.html",
+    "main.7a8fb9c5.css.map": "/Agri_connect/static/css/main.7a8fb9c5.css.map",
+    "main.992a83f6.js.map": "/Agri_connect/static/js/main.992a83f6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7a8fb9c5.css",
+    "static/js/main.992a83f6.js"
+  ]
+}
