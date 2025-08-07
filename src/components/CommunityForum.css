@@ -1,0 +1,390 @@
+/* agriconnect2.0/src/components/CommunityForum.css */
+
+/* General Body & Root Styles */
+body {
+  font-family: 'Roboto', Arial, sans-serif; /* Modern, clean font. Ensure Roboto is linked if not system font. */
+  line-height: 1.6;
+  color: #34495e; /* Darker, professional text color */
+  background-color: #f8f9fa; /* Light grey background for the page */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main Forum Container */
+.forum-container {
+  max-width: 960px; /* Slightly wider for more content space */
+  margin: 40px auto; /* Center the container with vertical spacing */
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px; /* Softer rounded corners */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* More pronounced, soft shadow */
+}
+
+/* Header Styles */
+.forum-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e9ecef; /* Slightly thicker separator */
+}
+
+.forum-header h1 {
+  color: #2c3e50; /* Deep blue/grey for main title */
+  font-size: 3em; /* Increased font size for main title */
+  font-weight: 700; /* Bolder */
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Subtle text shadow */
+}
+
+.forum-header p {
+  color: #6c757d; /* Muted grey for description */
+  font-size: 1.15em; /* Increased font size for description */
+}
+
+/* Card General Style (used for Add Post section and individual posts) */
+.card {
+  background-color: #ffffff; /* White background for cards */
+  border: 1px solid #dee2e6; /* Light grey border */
+  border-radius: 8px;
+  padding: 25px; /* Increased padding inside cards */
+  margin-bottom: 25px; /* Increased margin between cards */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Soft card shadow */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+.card:hover {
+  transform: translateY(-3px); /* Lift card slightly on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Toggle Post Form Button */
+.toggle-post-form-btn {
+  display: block; /* Make it a block element to control width/margin */
+  width: auto; /* Auto width based on content */
+  padding: 14px 30px; /* Increased padding */
+  margin: 0 auto 30px auto; /* Center button with bottom margin */
+  background-color: #28a745; /* Vibrant green */
+  color: white;
+  border: none;
+  border-radius: 6px; /* Softer rounded corners */
+  cursor: pointer;
+  font-size: 1.1em; /* Increased font size */
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 10px rgba(40, 167, 69, 0.2); /* Subtle shadow */
+}
+
+.toggle-post-form-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: translateY(-2px); /* Lift button on hover */
+}
+
+/* Login Prompt */
+.forum-login-prompt {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #7f8c8d; /* Muted grey */
+  font-size: 1.1em;
+}
+
+.forum-login-prompt a {
+  color: #3498db; /* Blue for links */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.forum-login-prompt a:hover {
+  text-decoration: underline;
+}
+
+/* Add Post Section */
+.add-post-section h3 {
+  color: #3498db; /* Blue for section title */
+  margin-top: 0;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 1.8em;
+}
+
+.add-post-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Increased gap between form elements */
+}
+
+.form-group label {
+  display: block; /* Make label occupy its own line */
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+  font-size: 1em;
+}
+
+/* --- IMPORTANT: Input and Textarea Styling (Increased Sizes) --- */
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 16px 20px;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1.4em; /* CORRECTED: Increased font size for text being typed */
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* --- NEW: Styling for the new category select dropdown --- */
+.form-group .form-select {
+  width: 100%;
+  padding: 12px 15px; /* Consistent with other form inputs */
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 1.1em; /* Slightly smaller than content box text for dropdown */
+  background-color: white;
+  cursor: pointer;
+  appearance: none; /* Remove default browser dropdown arrow */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E"); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group .form-select:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+/* --- END NEW --- */
+
+
+.submit-post-btn {
+  padding: 14px 25px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 10px rgba(52, 152, 219, 0.2);
+}
+
+.submit-post-btn:hover {
+  background-color: #2188da;
+  transform: translateY(-2px);
+}
+
+/* Posts List */
+.posts-list {
+  margin-top: 40px;
+}
+
+.post-card {
+  margin-bottom: 30px;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #3498db;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.post-title {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.delete-post-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  font-size: 1.3em;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.delete-post-btn:hover {
+  color: #c0392b;
+  transform: scale(1.1);
+}
+
+.post-meta {
+  font-size: 0.95em;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #ecf0f1;
+  padding-bottom: 12px;
+}
+
+/* --- NEW: Styling for the category tag displayed on each post --- */
+.post-category-tag {
+  display: inline-block;
+  background-color: #28a745; /* Green, agricultural theme */
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.85em; /* Slightly smaller for a tag */
+  font-weight: 600;
+  margin-right: 15px; /* Space between tag and other meta info */
+  text-transform: uppercase; /* Make category text uppercase */
+  letter-spacing: 0.5px;
+}
+/* --- END NEW --- */
+
+.post-content {
+  line-height: 1.7;
+  margin-bottom: 25px;
+  color: #495057;
+  font-size: 1.15em; /* CORRECTED: Increased font size for displayed post content */
+}
+
+/* Comments Section */
+.comments-section {
+  border-top: 1px solid #e9ecef;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.comments-section h4 {
+  color: #555;
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 1.4em;
+  font-weight: 500;
+}
+
+.comments-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comment-item {
+  background-color: #f0f4f7;
+  border-left: 4px solid #95a5a6;
+  padding: 12px 20px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.comment-item:hover {
+  background-color: #e6edf2;
+}
+
+.comment-text {
+  margin: 0 0 8px 0;
+  color: #34495e;
+  font-size: 1em;
+}
+
+.comment-meta {
+  font-size: 0.85em;
+  color: #95a5a6;
+  text-align: right;
+  margin: 0;
+}
+
+.no-comments-message {
+  font-style: italic;
+  color: #999;
+  text-align: center;
+  margin-top: 15px;
+  padding: 10px;
+  border: 1px dashed #ddd;
+  border-radius: 5px;
+  background-color: #fafafa;
+}
+
+/* Add Comment Form */
+.add-comment-form {
+  display: flex;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.add-comment-form input[type="text"] {
+  flex-grow: 1;
+  padding: 10px 15px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-comment-form input[type="text"]:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.add-comment-form button {
+  padding: 10px 20px;
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.add-comment-form button:hover {
+  background-color: #4cae4c;
+  transform: translateY(-1px);
+}
+
+/* General Messages (Loading, Error, No Posts) */
+.loading-message, .alert-error, .no-posts-message {
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.loading-message {
+  background-color: #e6f7ff;
+  color: #3186ac;
+  border: 1px solid #91d5ff;
+}
+
+.alert-error {
+  background-color: #ffe6e6;
+  color: #dc3545;
+  border: 1px solid #dc3545;
+}
+
+.no-posts-message {
+  background-color: #fffbe6;
+  color: #d1b600;
+  border: 1px solid #ffe58f;
+}
+
+/* Optional: Add a subtle Font Awesome icon link if you don't have it */
+/* If you don't have Font Awesome icons working (e.g. for trash can), add this to your public/index.html inside <head> */
+/* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" /> */

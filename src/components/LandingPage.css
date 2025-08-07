@@ -1,0 +1,159 @@
+/* src/components/LandingPage.css */
+
+/* Keyframe for subtle background animation */
+@keyframes fadeInBackground {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.landing-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full viewport height */
+  width: 100%;
+  background: linear-gradient(135deg, #a8e063, #56ab2f); /* Green gradient background */
+  background-size: 400% 400%;
+  animation: fadeInBackground 2s ease-in-out forwards; /* Fade in the background */
+  overflow: hidden; /* Prevent scroll if content overflows due to animation */
+  position: relative; /* For pseudo-elements or subtle animations */
+}
+
+/* Optional: Add a subtle textured overlay for more depth */
+.landing-page-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="%23000" opacity="0.05"><path d="M98 0H2V100h96V0zM4 2h92v96H4V2z"/><path d="M0 0h100v100H0zM2 2h96v96H2V2z"/></g></svg>') repeat;
+  opacity: 0.1;
+  pointer-events: none; /* Allows clicks to pass through */
+}
+
+
+.landing-content {
+  text-align: center;
+  color: white; /* White text for contrast */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Subtle text shadow for readability */
+  padding: 30px;
+  max-width: 900px;
+  width: 100%;
+  animation: float 3s ease-in-out infinite; /* Gentle floating animation */
+}
+
+.main-title {
+  font-family: 'Montserrat', sans-serif; /* A strong, modern font */
+  font-size: 4.5em; /* Large and prominent */
+  margin-bottom: 20px;
+  font-weight: 800; /* Extra bold */
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background: -webkit-linear-gradient(#faffc8, #ffffff); /* A subtle gradient for text highlight */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInBackground 1.5s ease-out forwards; /* Fade in effect for title */
+}
+
+.tagline {
+  font-family: 'Open Sans', sans-serif; /* A readable, friendly font */
+  font-size: 1.6em;
+  margin-bottom: 50px;
+  font-weight: 400;
+  opacity: 0.9;
+  animation: fadeInBackground 2s ease-out forwards; /* Fade in effect for tagline */
+}
+
+.landing-nav {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  justify-content: center;
+  gap: 25px; /* Space between navigation boxes */
+  margin-top: 40px;
+}
+
+.nav-box {
+  background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white box */
+  border-radius: 15px; /* More rounded corners */
+  padding: 25px 35px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+  text-decoration: none;
+  color: #333; /* Dark text */
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3em; /* Slightly larger font */
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  min-width: 180px; /* Ensure a minimum width */
+  max-width: 220px; /* Max width for consistency */
+}
+
+.nav-box:hover {
+  transform: translateY(-8px); /* Lift effect on hover */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+  background-color: #f0f0f0; /* Slightly darker on hover */
+  color: #0056b3; /* A subtle color change on hover */
+}
+
+.nav-icon {
+  font-size: 3em; /* Larger icons */
+  margin-bottom: 8px;
+  transition: transform 0.3s ease;
+}
+
+.nav-box:hover .nav-icon {
+  transform: scale(1.1); /* Slight icon grow on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 3em;
+  }
+
+  .tagline {
+    font-size: 1.2em;
+  }
+
+  .landing-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-box {
+    width: 80%; /* Make boxes take more width on small screens */
+    max-width: 300px; /* Limit max width */
+    font-size: 1.2em;
+    padding: 20px 30px;
+  }
+
+  .nav-icon {
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2.5em;
+    letter-spacing: 2px;
+  }
+
+  .tagline {
+    font-size: 1em;
+    margin-bottom: 30px;
+  }
+
+  .landing-page-container {
+    padding: 15px;
+  }
+}

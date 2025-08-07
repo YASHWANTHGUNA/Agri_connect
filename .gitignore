@@ -1,5 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# If a file is already tracked, run `git rm --cached <file>` to untrack it.
 # dependencies
 /node_modules
 /.pnp
@@ -11,6 +12,11 @@
 # production
 /build
 
+# Environment variables
+.env
+.env.*
+!/.env.example
+
 # misc
 .DS_Store
 .env.local
@@ -21,3 +27,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Backend sensitive files
+/backend/.env
+/backend/config/firebase-service-account.json
+/backend/config/dialogflow-key.json

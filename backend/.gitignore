@@ -1,0 +1,12 @@
+# Google Cloud Service Account Key (Dialogflow)
+/backend/config/agriconnect-service-account.json
+# Ignore secret keys
+.env
+
+# Other things to ignore
+node_modules/
+
+
+
+# Ignore compiled files (example)
+/dist
